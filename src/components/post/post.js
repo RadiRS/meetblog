@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Text, View, Thumbnail } from 'native-base';
+import { StyleSheet } from 'react-native';
 
 class Post extends Component {
   render() {
@@ -29,7 +30,7 @@ class Post extends Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     borderColor: '#fff',
     padding: 20,
@@ -44,12 +45,12 @@ const styles = {
   titleContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
-    fontFamily: 'san'
+    alignItems: 'center'
   },
   title: {
     flex: 0.7,
-    fontSize: 27
+    fontSize: 27,
+    fontFamily: 'Marat Sans DemiBold'
   },
   titleImage: {
     flex: 0.3
@@ -61,6 +62,6 @@ const styles = {
   textFooterPost: {
     color: '#8E9A95'
   }
-};
+});
 
 export default Post;

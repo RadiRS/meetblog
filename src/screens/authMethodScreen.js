@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { View, Text, Button, Icon } from 'native-base';
 
 class AuthMethodSceen extends Component {
@@ -42,7 +42,7 @@ class AuthMethodSceen extends Component {
         </Text>
         <Text style={styles.textFooter}>
           By creating an account, i accept Meet Blog's {'\n'}
-          <Text>Terms of Services</Text>
+          Terms of Services
         </Text>
       </View>
     );
@@ -57,38 +57,42 @@ const styles = {
     backgroundColor: '#EBF3EB'
   },
   textTitle: {
-    fontFamily: 'sans-serif',
+    fontFamily: 'PlayfairDisplay-Bold',
     fontSize: 50,
     marginBottom: 30,
-    textAlign: 'center',
-    fontWeight: 'bold'
+    textAlign: 'center'
   },
   textSubTitle: {
-    fontSize: 20,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 30,
+    width: '60%',
     marginBottom: 20,
     textAlign: 'center'
   },
   textButton: {
+    fontFamily: 'Marat Sans Light',
     flex: 1,
     fontSize: 20,
     color: '#181A18',
     paddingLeft: 0
   },
   textFooter: {
-    marginTop: 100,
-    fontSize: 18,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 20,
     color: '#8E9A95',
     textAlign: 'center',
     position: 'absolute',
-    bottom: 10
+    bottom: 20
   },
   textAlready: {
-    fontSize: 18,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 20,
     color: '#8E9A95',
     marginTop: 50
   },
   textSignin: {
-    fontSize: 18,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 20,
     color: '#079D75'
   },
   iconButton: {

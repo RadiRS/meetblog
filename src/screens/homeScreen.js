@@ -46,6 +46,7 @@ class HomeScreen extends Component {
         <Post />
         <Post />
         <Post />
+        <Post />
       </Container>
     );
   }

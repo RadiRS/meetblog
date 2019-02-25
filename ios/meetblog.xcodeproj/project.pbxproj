@@ -58,6 +58,30 @@
 		1D44AA318E89481E9EE8F94D /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E23E66E56FCC4F00A4DEBB12 /* rubicon-icon-font.ttf */; };
 		A039421475EF4C77902CA1FA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A7E44EAF18D405C89CCD3AD /* SimpleLineIcons.ttf */; };
 		BFE1EB8EA8834B62B0AD567B /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA0E8CB4364FD4AC9E9865 /* Zocial.ttf */; };
+		579EFA1726844C9486262F79 /* Marat Sans Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FEBEE0F0DB754BBC856956AD /* Marat Sans Black Italic.otf */; };
+		4DFD4AA97C284A2BA2BC3FBA /* Marat Sans Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF6725991B8340B3885F752A /* Marat Sans Black.otf */; };
+		0C634F19BB064C29A0645D71 /* Marat Sans Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C87FA68917754EC6B550D64A /* Marat Sans Bold Italic.otf */; };
+		94473C9B2261470F8DD35A44 /* Marat Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F83F1511904641C8A1F4FAB0 /* Marat Sans Bold.otf */; };
+		E8E7D4D8F6874E148E676D60 /* Marat Sans DemiBold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF1F224C7D814BBBB4502F4B /* Marat Sans DemiBold Italic.otf */; };
+		24ED142E053C43D8A40ED247 /* Marat Sans DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A55F8C7E8ED248E184DCE7C1 /* Marat Sans DemiBold.otf */; };
+		8B95AC6A989743AABFA6E211 /* Marat Sans ExtraBold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C083D28828604521ABF23E47 /* Marat Sans ExtraBold Italic.otf */; };
+		51D187BC8CFF4F67B75AEC02 /* Marat Sans ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E600AF15F41460F86DA1EF5 /* Marat Sans ExtraBold.otf */; };
+		C77D8B3DC1A9409CADC0901E /* Marat Sans ExtraLight Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 339960D7792446FE83A60578 /* Marat Sans ExtraLight Italic.otf */; };
+		934F81FE5E5D4C8881219AD0 /* Marat Sans ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8030D71EA2C945C89D5BCA2B /* Marat Sans ExtraLight.otf */; };
+		64BBA08C3AA44BA1A8F3BC96 /* Marat Sans Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29502A267F7D48F190C86F10 /* Marat Sans Italic.otf */; };
+		03AA6C1EED1847D4BC6A2F77 /* Marat Sans Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09C483E0B4934963A2E5E048 /* Marat Sans Light Italic.otf */; };
+		68D10D2E97674389914843A7 /* Marat Sans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AE5CB6C8CC9498DB62AFED8 /* Marat Sans Light.otf */; };
+		56C9FCB305C44AE2B75CFD05 /* Marat Sans Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 971AA7C120A54F6A9EF64381 /* Marat Sans Medium Italic.otf */; };
+		E6314639ACC34419BB8637B2 /* Marat Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF4303B0C0324195B973D98D /* Marat Sans Medium.otf */; };
+		C9D02E9DEA424683A7266780 /* Marat Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F95502B4972349DABB467947 /* Marat Sans Regular.otf */; };
+		97A0D2C34B0745AA8D3301B2 /* Marat Sans Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F0FD9B4534F4C8FB40CD855 /* Marat Sans Thin Italic.otf */; };
+		FB9CB628394549D7B15CFB9B /* Marat Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0BB2B7653034F0496243498 /* Marat Sans Thin.otf */; };
+		49541A52F4844490AB79DB64 /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CD1171987A4A53892EE00D /* PlayfairDisplay-Black.ttf */; };
+		4A6EF8455066480CA97B25D0 /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29A0007205F44DE084C122D9 /* PlayfairDisplay-BlackItalic.ttf */; };
+		9B60B6B435FF4743B654AB29 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78E4833730F44D9F8A7ED925 /* PlayfairDisplay-Bold.ttf */; };
+		53681623F2714118B1C67208 /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33DDCDA613F145198A37E4B7 /* PlayfairDisplay-BoldItalic.ttf */; };
+		820B9F845ECA47AE85A355A0 /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C040083237414EAD9258F730 /* PlayfairDisplay-Italic.ttf */; };
+		9E9470C7DAEE49129EEEA41C /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C4EC9E1B844392AB21AAC3 /* PlayfairDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,6 +409,30 @@
 		E23E66E56FCC4F00A4DEBB12 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0A7E44EAF18D405C89CCD3AD /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5BCA0E8CB4364FD4AC9E9865 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEBEE0F0DB754BBC856956AD /* Marat Sans Black Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Black Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Black Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF6725991B8340B3885F752A /* Marat Sans Black.otf */ = {isa = PBXFileReference; name = "Marat Sans Black.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C87FA68917754EC6B550D64A /* Marat Sans Bold Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Bold Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Bold Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F83F1511904641C8A1F4FAB0 /* Marat Sans Bold.otf */ = {isa = PBXFileReference; name = "Marat Sans Bold.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF1F224C7D814BBBB4502F4B /* Marat Sans DemiBold Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans DemiBold Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans DemiBold Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A55F8C7E8ED248E184DCE7C1 /* Marat Sans DemiBold.otf */ = {isa = PBXFileReference; name = "Marat Sans DemiBold.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans DemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C083D28828604521ABF23E47 /* Marat Sans ExtraBold Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans ExtraBold Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans ExtraBold Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E600AF15F41460F86DA1EF5 /* Marat Sans ExtraBold.otf */ = {isa = PBXFileReference; name = "Marat Sans ExtraBold.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		339960D7792446FE83A60578 /* Marat Sans ExtraLight Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans ExtraLight Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans ExtraLight Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8030D71EA2C945C89D5BCA2B /* Marat Sans ExtraLight.otf */ = {isa = PBXFileReference; name = "Marat Sans ExtraLight.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		29502A267F7D48F190C86F10 /* Marat Sans Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09C483E0B4934963A2E5E048 /* Marat Sans Light Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Light Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Light Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AE5CB6C8CC9498DB62AFED8 /* Marat Sans Light.otf */ = {isa = PBXFileReference; name = "Marat Sans Light.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		971AA7C120A54F6A9EF64381 /* Marat Sans Medium Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Medium Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Medium Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF4303B0C0324195B973D98D /* Marat Sans Medium.otf */ = {isa = PBXFileReference; name = "Marat Sans Medium.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F95502B4972349DABB467947 /* Marat Sans Regular.otf */ = {isa = PBXFileReference; name = "Marat Sans Regular.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5F0FD9B4534F4C8FB40CD855 /* Marat Sans Thin Italic.otf */ = {isa = PBXFileReference; name = "Marat Sans Thin Italic.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Thin Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0BB2B7653034F0496243498 /* Marat Sans Thin.otf */ = {isa = PBXFileReference; name = "Marat Sans Thin.otf"; path = "../src/assets/fonts/marat-sans-cufonfonts/Marat Sans Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51CD1171987A4A53892EE00D /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-Black.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		29A0007205F44DE084C122D9 /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-BlackItalic.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78E4833730F44D9F8A7ED925 /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-Bold.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33DDCDA613F145198A37E4B7 /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-BoldItalic.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C040083237414EAD9258F730 /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-Italic.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		18C4EC9E1B844392AB21AAC3 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; name = "PlayfairDisplay-Regular.ttf"; path = "../src/assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -673,6 +721,30 @@
 				E23E66E56FCC4F00A4DEBB12 /* rubicon-icon-font.ttf */,
 				0A7E44EAF18D405C89CCD3AD /* SimpleLineIcons.ttf */,
 				5BCA0E8CB4364FD4AC9E9865 /* Zocial.ttf */,
+				FEBEE0F0DB754BBC856956AD /* Marat Sans Black Italic.otf */,
+				FF6725991B8340B3885F752A /* Marat Sans Black.otf */,
+				C87FA68917754EC6B550D64A /* Marat Sans Bold Italic.otf */,
+				F83F1511904641C8A1F4FAB0 /* Marat Sans Bold.otf */,
+				CF1F224C7D814BBBB4502F4B /* Marat Sans DemiBold Italic.otf */,
+				A55F8C7E8ED248E184DCE7C1 /* Marat Sans DemiBold.otf */,
+				C083D28828604521ABF23E47 /* Marat Sans ExtraBold Italic.otf */,
+				5E600AF15F41460F86DA1EF5 /* Marat Sans ExtraBold.otf */,
+				339960D7792446FE83A60578 /* Marat Sans ExtraLight Italic.otf */,
+				8030D71EA2C945C89D5BCA2B /* Marat Sans ExtraLight.otf */,
+				29502A267F7D48F190C86F10 /* Marat Sans Italic.otf */,
+				09C483E0B4934963A2E5E048 /* Marat Sans Light Italic.otf */,
+				7AE5CB6C8CC9498DB62AFED8 /* Marat Sans Light.otf */,
+				971AA7C120A54F6A9EF64381 /* Marat Sans Medium Italic.otf */,
+				AF4303B0C0324195B973D98D /* Marat Sans Medium.otf */,
+				F95502B4972349DABB467947 /* Marat Sans Regular.otf */,
+				5F0FD9B4534F4C8FB40CD855 /* Marat Sans Thin Italic.otf */,
+				D0BB2B7653034F0496243498 /* Marat Sans Thin.otf */,
+				51CD1171987A4A53892EE00D /* PlayfairDisplay-Black.ttf */,
+				29A0007205F44DE084C122D9 /* PlayfairDisplay-BlackItalic.ttf */,
+				78E4833730F44D9F8A7ED925 /* PlayfairDisplay-Bold.ttf */,
+				33DDCDA613F145198A37E4B7 /* PlayfairDisplay-BoldItalic.ttf */,
+				C040083237414EAD9258F730 /* PlayfairDisplay-Italic.ttf */,
+				18C4EC9E1B844392AB21AAC3 /* PlayfairDisplay-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1142,6 +1214,30 @@
 				1D44AA318E89481E9EE8F94D /* rubicon-icon-font.ttf in Resources */,
 				A039421475EF4C77902CA1FA /* SimpleLineIcons.ttf in Resources */,
 				BFE1EB8EA8834B62B0AD567B /* Zocial.ttf in Resources */,
+				579EFA1726844C9486262F79 /* Marat Sans Black Italic.otf in Resources */,
+				4DFD4AA97C284A2BA2BC3FBA /* Marat Sans Black.otf in Resources */,
+				0C634F19BB064C29A0645D71 /* Marat Sans Bold Italic.otf in Resources */,
+				94473C9B2261470F8DD35A44 /* Marat Sans Bold.otf in Resources */,
+				E8E7D4D8F6874E148E676D60 /* Marat Sans DemiBold Italic.otf in Resources */,
+				24ED142E053C43D8A40ED247 /* Marat Sans DemiBold.otf in Resources */,
+				8B95AC6A989743AABFA6E211 /* Marat Sans ExtraBold Italic.otf in Resources */,
+				51D187BC8CFF4F67B75AEC02 /* Marat Sans ExtraBold.otf in Resources */,
+				C77D8B3DC1A9409CADC0901E /* Marat Sans ExtraLight Italic.otf in Resources */,
+				934F81FE5E5D4C8881219AD0 /* Marat Sans ExtraLight.otf in Resources */,
+				64BBA08C3AA44BA1A8F3BC96 /* Marat Sans Italic.otf in Resources */,
+				03AA6C1EED1847D4BC6A2F77 /* Marat Sans Light Italic.otf in Resources */,
+				68D10D2E97674389914843A7 /* Marat Sans Light.otf in Resources */,
+				56C9FCB305C44AE2B75CFD05 /* Marat Sans Medium Italic.otf in Resources */,
+				E6314639ACC34419BB8637B2 /* Marat Sans Medium.otf in Resources */,
+				C9D02E9DEA424683A7266780 /* Marat Sans Regular.otf in Resources */,
+				97A0D2C34B0745AA8D3301B2 /* Marat Sans Thin Italic.otf in Resources */,
+				FB9CB628394549D7B15CFB9B /* Marat Sans Thin.otf in Resources */,
+				49541A52F4844490AB79DB64 /* PlayfairDisplay-Black.ttf in Resources */,
+				4A6EF8455066480CA97B25D0 /* PlayfairDisplay-BlackItalic.ttf in Resources */,
+				9B60B6B435FF4743B654AB29 /* PlayfairDisplay-Bold.ttf in Resources */,
+				53681623F2714118B1C67208 /* PlayfairDisplay-BoldItalic.ttf in Resources */,
+				820B9F845ECA47AE85A355A0 /* PlayfairDisplay-Italic.ttf in Resources */,
+				9E9470C7DAEE49129EEEA41C /* PlayfairDisplay-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,7 +53,7 @@ class SignupScreen extends Component {
         </Text>
         <Text style={styles.textFooter}>
           By creating an account, i accept Meet Blog's {'\n'}
-          <Text>Terms of Services</Text>
+          Terms of Services
         </Text>
       </View>
     );
@@ -68,16 +68,16 @@ const styles = {
     backgroundColor: '#EBF3EB'
   },
   textTitle: {
-    fontFamily: 'sans-serif',
+    fontFamily: 'PlayfairDisplay-Bold',
     fontSize: 30,
     marginBottom: 30,
-    textAlign: 'center',
-    fontWeight: 'bold'
+    textAlign: 'center'
   },
   textSubTitle: {
-    fontSize: 20,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 27,
     marginBottom: 20,
-    width: '80%',
+    width: '70%',
     textAlign: 'center'
   },
   form: {
@@ -86,8 +86,9 @@ const styles = {
     marginTop: 30
   },
   formLabel: {
-    fontSize: 20,
-    marginVertical: 10
+    fontFamily: 'Marat Sans Light',
+    fontSize: 22
+    // marginVertical: 10
   },
   formItem: {
     marginBottom: 10
@@ -96,27 +97,28 @@ const styles = {
     // marginBottom: 10
   },
   textButton: {
+    fontFamily: 'Marat Sans Demibold',
     textAlign: 'center',
     color: '#fff',
-    fontSize: 20,
+    fontSize: 25,
     paddingLeft: 0
   },
   textAlready: {
     fontSize: 18,
     color: '#8E9A95',
-    marginTop: 50
+    marginTop: 40
   },
   textSignin: {
     fontSize: 18,
     color: '#079D75'
   },
   textFooter: {
-    marginTop: 100,
+    fontFamily: 'Marat Sans Light',
     fontSize: 18,
     color: '#8E9A95',
     textAlign: 'center',
     position: 'absolute',
-    bottom: 10
+    bottom: 20
   },
   button: {
     backgroundColor: '#079D75',

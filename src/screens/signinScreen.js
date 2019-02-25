@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { View, Text, Button, Form, Item, Label, Input } from 'native-base';
 
 StatusBar.setHidden(false);
@@ -34,21 +34,21 @@ class SigninScreen extends Component {
           Dont have account ? {'\t'}
           <Text
             style={styles.textSignin}
-            onPress={() => this.props.navigation.navigate('Signup')}
+            onPress={() => this.props.navigation.navigate('AuthMethod')}
           >
             Sign up
           </Text>
         </Text>
         <Text style={styles.textFooter}>
           By creating an account, i accept Meet Blog's {'\n'}
-          <Text>Terms of Services</Text>
+          Terms of Services
         </Text>
       </View>
     );
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -56,38 +56,43 @@ const styles = {
     backgroundColor: '#EBF3EB'
   },
   textTitle: {
-    fontFamily: 'sans-serif',
+    fontFamily: 'PlayfairDisplay-Bold',
     fontSize: 50,
     marginBottom: 30,
-    textAlign: 'center',
-    fontWeight: 'bold'
+    textAlign: 'center'
   },
   textSubTitle: {
-    fontSize: 20,
+    fontFamily: 'Marat Sans Light',
+    width: '60%',
+    fontSize: 30,
     marginBottom: 20,
     textAlign: 'center'
   },
   textButton: {
+    fontFamily: 'Marat Sans Demibold',
     textAlign: 'center',
     color: '#fff',
-    fontSize: 20,
+    fontSize: 25,
     paddingLeft: 0
   },
   textFooter: {
+    fontFamily: 'Marat Sans Light',
     marginTop: 100,
-    fontSize: 18,
+    fontSize: 20,
     color: '#8E9A95',
     textAlign: 'center',
     position: 'absolute',
-    bottom: 10
+    bottom: 20
   },
   textAlready: {
-    fontSize: 18,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 20,
     color: '#8E9A95',
     marginTop: 50
   },
   textSignin: {
-    fontSize: 18,
+    fontFamily: 'Marat Sans Light',
+    fontSize: 20,
     color: '#079D75'
   },
   button: {
@@ -106,8 +111,9 @@ const styles = {
     marginTop: 30
   },
   formLabel: {
-    fontSize: 20,
-    marginVertical: 10
+    fontFamily: 'Marat Sans Light',
+    fontSize: 22
+    // marginVertical: 10
   },
   formItem: {
     marginBottom: 10
@@ -115,6 +121,6 @@ const styles = {
   formInput: {
     // marginBottom: 10
   }
-};
+});
 
 export default SigninScreen;

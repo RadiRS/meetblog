@@ -13,7 +13,7 @@ const AppHomeStackNavigator = createStackNavigator({
   Home
 });
 
-// // Profile Stack Navigator
+// Profile Stack Navigator
 const AppProfileStackNavigator = createStackNavigator({
   Profile
 });
@@ -46,9 +46,9 @@ const AppDrawerNavigator = createDrawerNavigator(
 // App Switch Navigator
 const AppSwitchNavigator = createSwitchNavigator({
   // Splash,
-  // AuthMethod,
-  // Signin,
-  // Signup,
+  AuthMethod,
+  Signin,
+  Signup,
   AppDrawerNavigator
 });
 
