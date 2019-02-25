@@ -7,6 +7,7 @@ import {
 
 // Screens
 import { Splash, AuthMethod, Signin, Signup, Home, Profile } from '../screens';
+import DrawerNavigator from '../components/drawer/drawerNavigator';
 
 // Home Stack Navigator
 const AppHomeStackNavigator = createStackNavigator({
@@ -29,23 +30,19 @@ const AppDrawerNavigator = createDrawerNavigator(
     }
   },
   {
-    useNativeAnimations: true,
+    drawerPosition: 'left',
     drawerType: 'slide',
-    contentOptions: {
-      activeTintColor: '#E40044',
-      itemsContainerStyle: {
-        marginVertical: 0
-      },
-      iconContainerStyle: {
-        opacity: 1
-      }
-    }
+    drawerWidth: 400,
+    contentComponent: DrawerNavigator,
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToogleRoute: 'DrawerToggle'
   }
 );
 
 // App Switch Navigator
 const AppSwitchNavigator = createSwitchNavigator({
-  // Splash,
+  Splash,
   AuthMethod,
   Signin,
   Signup,
