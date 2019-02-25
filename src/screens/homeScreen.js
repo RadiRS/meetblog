@@ -40,13 +40,18 @@ class HomeScreen extends Component {
       )
     };
   };
+
+  handlePress = () => {
+    this.props.navigation.navigate('DetailPost');
+  };
+
   render() {
     return (
       <Container style={styles.container}>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Post onPress={() => this.handlePress()} />
+        <Post onPress={() => this.handlePress()} />
+        <Post onPress={() => this.handlePress()} />
+        <Post onPress={() => this.handlePress()} />
       </Container>
     );
   }

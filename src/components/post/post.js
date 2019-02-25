@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Card, Text, View, Thumbnail } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 class Post extends Component {
   render() {
+    const { onPress } = this.props;
+
     return (
-      <View noShadow style={styles.container}>
+      <TouchableOpacity onPress={onPress} style={styles.container}>
         <Text style={styles.titleHeaderPost}>
           Based On Your Reading History
         </Text>
@@ -25,7 +27,7 @@ class Post extends Component {
           <Text style={styles.textFooterPost}>12/21/2018</Text>
           <Text style={styles.textFooterPost}>6 min read</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
