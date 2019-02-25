@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
-import { StatusBar, View, Text } from 'react-native';
+import { _retrieveData } from '../lib/helpers/asynStorage';
+import { StatusBar, ActivityIndicator, ImageBackground } from 'react-native';
+
+StatusBar.setHidden(true);
+
+const imgBackground = require('../assets/img/splashBackground.jpg');
 
 class SplashScreen extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      // const userToken = _retrieveData('userToken');
+      const userToken = false;
+      this.props.navigation.navigate(userToken ? 'Home' : 'AuthMethod');
+    }, 2000);
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-        <Text> Splash Screen </Text>
-      </View>
+      <ImageBackground
+        resizeMode="cover"
+        source={imgBackground}
+        style={styles.container}
+      >
+        <ActivityIndicator size="large" />
+      </ImageBackground>
     );
   }
 }
@@ -16,8 +32,7 @@ const styles = {
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff'
+    alignItems: 'center'
   }
 };
 

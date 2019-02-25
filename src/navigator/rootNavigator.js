@@ -6,14 +6,14 @@ import {
 } from 'react-navigation';
 
 // Screens
-import { Splash, Signin, Signup, Home, Profile } from '../screens';
+import { Splash, AuthMethod, Signin, Signup, Home, Profile } from '../screens';
 
 // Home Stack Navigator
 const AppHomeStackNavigator = createStackNavigator({
   Home
 });
 
-// Profile Stack Navigator
+// // Profile Stack Navigator
 const AppProfileStackNavigator = createStackNavigator({
   Profile
 });
@@ -45,7 +45,8 @@ const AppDrawerNavigator = createDrawerNavigator(
 
 // App Switch Navigator
 const AppSwitchNavigator = createSwitchNavigator({
-  Splash,
+  // Splash,
+  AuthMethod,
   Signin,
   Signup,
   AppDrawerNavigator
