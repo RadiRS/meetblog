@@ -46,9 +46,9 @@ const AppDrawerNavigator = createDrawerNavigator(
 // App Switch Navigator
 const AppSwitchNavigator = createSwitchNavigator({
   // Splash,
-  AuthMethod,
-  Signin,
-  Signup,
+  // AuthMethod,
+  // Signin,
+  // Signup,
   AppDrawerNavigator
 });
 

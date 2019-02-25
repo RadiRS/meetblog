@@ -22,7 +22,7 @@ class SplashScreen extends Component {
         source={imgBackground}
         style={styles.container}
       >
-        <ActivityIndicator size="large" />
+        <ActivityIndicator style={styles.spinner} size="large" />
       </ImageBackground>
     );
   }
@@ -33,6 +33,9 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  spinner: {
+    color: '#fff'
   }
 };
 
