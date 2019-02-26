@@ -15,7 +15,7 @@ import {
   Profile,
   DetailPost
 } from '../screens';
-import DrawerNavigator from '../components/drawer/drawerNavigator';
+import DrawerNavigator from '../components/drawer/DrawerNavigator';
 
 // Home Stack Navigator
 const AppHomeStackNavigator = createStackNavigator({

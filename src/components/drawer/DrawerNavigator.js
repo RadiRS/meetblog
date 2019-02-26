@@ -1,4 +1,5 @@
 import React from 'react';
+import { DrawerItems } from 'react-navigation';
 import { FlatList } from 'react-native';
 import {
   Container,
@@ -12,7 +13,7 @@ import {
   View
 } from 'native-base';
 
-const DrawerNavigator = () => {
+const DrawerNavigator = props => {
   const data1 = ['Home', 'Audio', 'Bookmarks', 'Interests'];
   const data2 = ['Become a member'];
   const data3 = ['New post', 'Stats', 'Posts'];
@@ -22,7 +23,13 @@ const DrawerNavigator = () => {
 
   renderItem = ({ item }) => (
     <ListItem noBorder>
-      <Text style={styles.textList}>{item}</Text>
+      <Text
+        // onPress={() => this.props.navigation.navigate(item)}
+        onPress={() => alert(item)}
+        style={styles.textList}
+      >
+        {item}
+      </Text>
     </ListItem>
   );
 
@@ -40,24 +47,7 @@ const DrawerNavigator = () => {
         <Text style={styles.textSub}>See profile</Text>
       </Header>
       <Content contentContainerStyle={styles.contentContainer}>
-        <FlatList
-          style={styles.flatList}
-          data={data1}
-          keyExtractor={keyExtractor}
-          renderItem={renderItem}
-        />
-        <FlatList
-          style={styles.flatList}
-          data={data2}
-          keyExtractor={keyExtractor}
-          renderItem={renderItem}
-        />
-        <FlatList
-          style={styles.flatList}
-          data={data3}
-          keyExtractor={keyExtractor}
-          renderItem={renderItem}
-        />
+        <DrawerItems {...props} />
 
         <View style={styles.listFooter}>
           <Thumbnail
@@ -83,7 +73,7 @@ const styles = {
     // paddingLeft: 20
   },
   contentContainer: {
-    paddingLeft: 10
+    // paddingLeft: 10
   },
   headers: {
     backgroundColor: '#079D75',

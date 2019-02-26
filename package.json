@@ -16,6 +16,7 @@
     "native-base": "^2.12.0",
     "react": "16.6.3",
     "react-native": "0.58.5",
+    "react-native-enhanced-popup-menu": "^0.6.1",
     "react-native-gesture-handler": "^1.0.16",
     "react-navigation": "^3.3.0",
     "react-redux": "^6.0.1",

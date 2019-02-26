@@ -4,8 +4,8 @@ import { Button, Icon, View, Text, Container } from 'native-base';
 import { DrawerActions } from 'react-navigation';
 
 // Components
-import ButtonIconComponent from '../components/common/buttons/iconButton';
-import Post from '../components/post/post';
+import ButtonIconComponent from '../components/common/buttons/IconButton';
+import Post from '../components/post/Post';
 
 StatusBar.setHidden(false);
 

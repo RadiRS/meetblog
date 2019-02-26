@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Icon } from 'native-base';
 
-const iconButton = props => {
+const IconButton = props => {
   const { iconName, onPress, ...restProps } = props;
 
   return (
@@ -21,4 +21,4 @@ const styles = {
   }
 };
 
-export default iconButton;
+export default IconButton;
