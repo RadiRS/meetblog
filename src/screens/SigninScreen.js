@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { StatusBar, StyleSheet } from 'react-native';
 import { View, Text, Button, Form, Item, Label, Input } from 'native-base';
+import { loginUser } from '../public/redux/actions/userActions';
 
 StatusBar.setHidden(false);
 
 class SigninScreen extends Component {
+  state = {
+    email: '',
+    password: ''
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.error) {
+      alert(nextProps.error.message);
+    }
+  }
+
+  handleLoginButton = () => {
+    const data = this.state;
+    this.props.loginUser(data);
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -15,14 +33,22 @@ class SigninScreen extends Component {
         <Form style={styles.form}>
           <Label style={styles.formLabel}>Your email</Label>
           <Item style={styles.formItem}>
-            <Input style={styles.formInput} textContentType="emailAddress" />
+            <Input
+              onChangeText={value => this.setState({ email: value })}
+              style={styles.formInput}
+              textContentType="emailAddress"
+            />
           </Item>
           <Label style={styles.formLabel}>Your password</Label>
           <Item style={styles.formItem}>
-            <Input style={styles.formInput} secureTextEntry={true} />
+            <Input
+              onChangeText={value => this.setState({ password: value })}
+              style={styles.formInput}
+              secureTextEntry={true}
+            />
           </Item>
           <Button
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.handleLoginButton()}
             style={styles.button}
           >
             <Text uppercase={false} style={styles.textButton}>
@@ -123,4 +149,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SigninScreen;
+const mapStateToProps = ({ error }) => ({
+  error
+});
+
+const mapDispatchToProps = {
+  loginUser
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SigninScreen);

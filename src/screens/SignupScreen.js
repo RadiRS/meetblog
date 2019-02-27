@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropsTypes from 'prop-types';
 import { StatusBar } from 'react-native';
-import {
-  View,
-  Text,
-  Button,
-  Icon,
-  Label,
-  Input,
-  Form,
-  Item
-} from 'native-base';
+import { View, Text, Button, Label, Input, Form, Item } from 'native-base';
+import { registerUser } from '../public/redux/actions/userActions';
+
 StatusBar.setHidden(false);
 class SignupScreen extends Component {
+  state = {
+    username: '',
+    email: '',
+    password: ''
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.error) {
+      alert(nextProps.error.message);
+    }
+  }
+
+  handleRegisterButton = () => {
+    const data = this.state;
+    this.props.registerUser(data);
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,20 +33,31 @@ class SignupScreen extends Component {
           can login
         </Text>
         <Form style={styles.form}>
-          <Label style={styles.formLabel}>Your full name</Label>
+          <Label style={styles.formLabel}>Your username</Label>
           <Item style={styles.formItem}>
-            <Input style={styles.formInput} />
+            <Input
+              onChangeText={value => this.setState({ username: value })}
+              style={styles.formInput}
+            />
           </Item>
           <Label style={styles.formLabel}>Your email</Label>
           <Item style={styles.formItem}>
-            <Input style={styles.formInput} textContentType="emailAddress" />
+            <Input
+              onChangeText={value => this.setState({ email: value })}
+              style={styles.formInput}
+              textContentType="emailAddress"
+            />
           </Item>
           <Label style={styles.formLabel}>Your password</Label>
           <Item style={styles.formItem}>
-            <Input style={styles.formInput} secureTextEntry={true} />
+            <Input
+              onChangeText={value => this.setState({ password: value })}
+              style={styles.formInput}
+              secureTextEntry={true}
+            />
           </Item>
           <Button
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.handleRegisterButton()}
             style={styles.button}
           >
             <Text uppercase={false} style={styles.textButton}>
@@ -131,4 +154,20 @@ const styles = {
   }
 };
 
-export default SignupScreen;
+SignupScreen.propTypes = {
+  registerUser: PropsTypes.func.isRequired,
+  error: PropsTypes.object.isRequired
+};
+
+const mapStateToProps = ({ error }) => ({
+  error
+});
+
+const mapDispatchToProps = {
+  registerUser
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignupScreen);

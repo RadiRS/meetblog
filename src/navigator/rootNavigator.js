@@ -51,10 +51,10 @@ const AppDrawerNavigator = createDrawerNavigator(
 
 // App Switch Navigator
 const AppSwitchNavigator = createSwitchNavigator({
-  // Splash,
-  // AuthMethod,
-  // Signin,
-  // Signup,
+  Splash,
+  AuthMethod,
+  Signin,
+  Signup,
   AppDrawerNavigator
 });
 
