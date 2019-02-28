@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Content, Thumbnail, Text, View, Icon } from 'native-base';
 
 class DetailPostScreen extends Component {
   render() {
+    const { title, img_Content, slug, content, created_at } = this.props.post;
+    const { username } = this.props.post.users;
+
     return (
       <Container>
         <Content>
           <View style={styles.headerContent}>
-            <Text style={styles.title}>
-              Surprising Advice From a Wealthy Man
-            </Text>
-            <Text style={styles.subTitle}>It just might change your life</Text>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subTitle}>{slug}</Text>
             <View style={styles.infoContainer}>
-              <Thumbnail
-                source={{
-                  uri:
-                    'https://s3.amazonaws.com/uifaces/faces/twitter/ramanathan_pdy/128.jpg'
-                }}
-              />
-              <Text style={styles.authorText}>Zander Nethercutt</Text>
-              <Text style={styles.datePost}>4 days ago - 11 min read</Text>
+              {img_Content ? (
+                <Thumbnail
+                  source={{
+                    uri: img_Content
+                  }}
+                />
+              ) : null}
+
+              <Text style={styles.authorText}>{username}</Text>
+              <Text style={styles.datePost}>{created_at} - 11 min read</Text>
             </View>
           </View>
           <Thumbnail
@@ -28,23 +32,7 @@ class DetailPostScreen extends Component {
             source={{ uri: 'http://lorempixel.com/640/480' }}
           />
           <View style={styles.containerBody}>
-            <Text style={styles.bodyText}>
-              loremUt corrupti blanditiis officia. Soluta perferendis voluptas
-              illo vel quo explicabo et. Non velit maiores numquam aut quia.
-              Odit expedita vero architecto sunt commodi fuga quis dolorem quos.
-              Tenetur optio iure at similique. Rerum libero eius rerum
-              consequatur vitae non voluptatem quia repellendus. Sint ex
-              dignissimos velit. Ipsa et molestiae ducimus voluptas. Quae quam
-              eos et doloribus asperiores quas quae dolores. Voluptatem
-              consequuntur distinctio aut ipsam ut dolorem. Laudantium porro
-              voluptatem rem quo et velit a debitis rerum. Numquam consequatur
-              voluptatibus asperiores voluptates eius sequi ut ab voluptatem.
-              dignissimos velit. Ipsa et molestiae ducimus voluptas. Quae quam
-              eos et doloribus asperiores quas quae dolores. Voluptatem
-              consequuntur distinctio aut ipsam ut dolorem. Laudantium porro
-              voluptatem rem quo et velit a debitis rerum. Numquam consequatur
-              voluptatibus asperiores voluptates eius sequi ut ab voluptatem.
-            </Text>
+            <Text style={styles.bodyText}>{content}</Text>
           </View>
         </Content>
       </Container>
@@ -91,4 +79,11 @@ const styles = {
   }
 };
 
-export default DetailPostScreen;
+const mapStateToProps = ({ post }) => ({
+  post: post.result
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(DetailPostScreen);

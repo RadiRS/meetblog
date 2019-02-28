@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { StatusBar, FlatList } from 'react-native';
 import { Button, Icon, View, Text, Container } from 'native-base';
 import { DrawerActions } from 'react-navigation';
-
+// Actions
+import { getPosts, getPost } from '../public/redux/actions';
 // Components
 import ButtonIconComponent from '../components/common/buttons/IconButton';
 import Post from '../components/post/Post';
+import Spinner from '../components/common/spinner/SpinnerComponent';
 
 StatusBar.setHidden(false);
 
@@ -42,24 +44,41 @@ class HomeScreen extends Component {
     };
   };
 
+  componentDidMount() {
+    this.props.getPosts();
+  }
+
+  handleRefresh = () => {
+    this.props.getPosts();
+  };
+
   keyExtractor = item => item.toString();
 
-  renderItem = ({ item }) => <Post onPress={() => alert(item)} />;
+  renderItem = ({ item }) => (
+    <Post onPress={() => this.handlePressPost(item)} data={item} />
+  );
 
-  handlePress = () => {
-    this.props.navigation.navigate('DetailPost');
+  handlePressPost = item => {
+    // this.props.navigation.navigate('DetailPost');
+    this.props.getPost(item);
   };
 
   render() {
+    const { data, isLoading } = this.props.post;
+
     return (
       <Container style={styles.container}>
-        {/* <Post onPress={() => this.handlePress()} /> */}
-        {/* <FlatList
-          style={styles.flatListFooter}
-          data={this.state.data1}
-          keyExtractor={item => this.keyExtractor(item)}
-          renderItem={item => this.renderItem(item)}
-        /> */}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <FlatList
+            data={data}
+            keyExtractor={this.keyExtractor}
+            renderItem={this.renderItem}
+            refreshing={isLoading}
+            onRefresh={() => this.handleRefresh()}
+          />
+        )}
       </Container>
     );
   }
@@ -72,8 +91,16 @@ const styles = {
   }
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = ({ post }) => ({
+  post
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  getPosts,
+  getPost
+};
 
-export default connect()(HomeScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeScreen);

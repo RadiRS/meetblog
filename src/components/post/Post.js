@@ -4,27 +4,25 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 
 class Post extends Component {
   render() {
-    const { onPress } = this.props;
+    const { onPress, data } = this.props;
 
     return (
       <TouchableOpacity onPress={onPress} style={styles.container}>
-        <Text style={styles.titleHeaderPost}>
-          Based On Your Reading History
-        </Text>
+        <Text style={styles.titleHeaderPost}>{data.slug}</Text>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>
-            41 Things You Should Say "No" to For a Happier 2019
-          </Text>
-          <Thumbnail
-            square
-            large
-            style={styles.titleImage}
-            source={{ uri: 'http://lorempixel.com/640/480' }}
-          />
+          <Text style={styles.title}>{data.title}</Text>
+          {data.img_content ? (
+            <Thumbnail
+              square
+              large
+              style={styles.titleImage}
+              source={{ uri: data.img_content }}
+            />
+          ) : null}
         </View>
-        <Text style={styles.author}>Danny Forest</Text>
+        <Text style={styles.author}>{data.users.username}</Text>
         <View style={styles.containerFooterPost}>
-          <Text style={styles.textFooterPost}>12/21/2018</Text>
+          <Text style={styles.textFooterPost}>{data.created_at}</Text>
           <Text style={styles.textFooterPost}>6 min read</Text>
         </View>
       </TouchableOpacity>
