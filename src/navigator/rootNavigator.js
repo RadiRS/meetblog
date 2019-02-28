@@ -14,14 +14,20 @@ import {
   Signup,
   Home,
   Profile,
-  DetailPost
+  UserPost,
+  DetailPost,
+  CreatePost,
+  UpdatePost
 } from '../screens';
 import DrawerNavigator from '../components/drawer/DrawerNavigator';
 
 // Home Stack Navigator
 const AppHomeStackNavigator = createStackNavigator({
   Home,
-  DetailPost
+  DetailPost,
+  CreatePost,
+  UserPost,
+  UpdatePost
 });
 
 // Profile Stack Navigator

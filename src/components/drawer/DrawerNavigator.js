@@ -13,6 +13,7 @@ import {
   View
 } from 'native-base';
 import { authenticatedUser } from '../../public/redux/actions/userActions';
+import { getPosts } from '../../public/redux/actions/postActions';
 import NavigationServices from '../../services/navigation';
 
 class DrawerNavigator extends Component {
@@ -63,24 +64,30 @@ class DrawerNavigator extends Component {
           </Text>
         </Header>
         <Content contentContainerStyle={styles.contentContainer}>
-          <FlatList
-            style={styles.flatListFooter}
-            data={this.state.data1}
-            keyExtractor={item => this.keyExtractor(item)}
-            renderItem={item => this.renderItem(item)}
-          />
-          <FlatList
-            style={styles.flatListFooter}
-            data={this.state.data2}
-            keyExtractor={item => this.keyExtractor(item)}
-            renderItem={item => this.renderItem(item)}
-          />
-          <FlatList
-            style={styles.flatListFooter}
-            data={this.state.data3}
-            keyExtractor={item => this.keyExtractor(item)}
-            renderItem={item => this.renderItem(item)}
-          />
+          <ListItem onPress={() => this.props.getPosts()} noBorder>
+            <Text style={styles.textList}>Home</Text>
+          </ListItem>
+          <ListItem noBorder>
+            <Text style={styles.textList}>Audio</Text>
+          </ListItem>
+          <ListItem noBorder>
+            <Text style={styles.textList}>Bookmarks</Text>
+          </ListItem>
+          <ListItem noBorder>
+            <Text style={styles.textList}>Interest</Text>
+          </ListItem>
+          <ListItem
+            onPress={() => NavigationServices.navigate('CreatePost')}
+            noBorder
+          >
+            <Text style={styles.textList}>New Post</Text>
+          </ListItem>
+          <ListItem
+            onPress={() => NavigationServices.navigate('UserPost')}
+            noBorder
+          >
+            <Text style={styles.textList}>Posts</Text>
+          </ListItem>
 
           <View style={styles.listFooter}>
             <Thumbnail
@@ -159,7 +166,12 @@ const mapStateToProps = ({ user }) => ({
   user: user.data
 });
 
+const mapDispatchToProps = {
+  authenticatedUser,
+  getPosts
+};
+
 export default connect(
   mapStateToProps,
-  { authenticatedUser }
+  mapDispatchToProps
 )(DrawerNavigator);
