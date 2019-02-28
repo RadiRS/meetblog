@@ -1,5 +1,5 @@
-import React from 'react';
-import { DrawerItems } from 'react-navigation';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { FlatList } from 'react-native';
 import {
   Container,
@@ -12,61 +12,90 @@ import {
   Thumbnail,
   View
 } from 'native-base';
+import NavigationServices from '../../services/navigation';
 
-const DrawerNavigator = props => {
-  const data1 = ['Home', 'Audio', 'Bookmarks', 'Interests'];
-  const data2 = ['Become a member'];
-  const data3 = ['New post', 'Stats', 'Posts'];
-  const data4 = ['Settings', 'Help'];
+class DrawerNavigator extends Component {
+  state = {
+    data1: ['Home', 'Audio', 'Bookmarks', 'Interests'],
+    data2: ['Become a member'],
+    data3: ['New post', 'Stats', 'Posts'],
+    data4: ['Settings', 'Help'],
+    profile: {}
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.user.profile) {
+      this.setState({ profile: nextProps.user.profile });
+    }
+  }
 
   keyExtractor = item => item.toString();
 
   renderItem = ({ item }) => (
-    <ListItem noBorder>
-      <Text
-        // onPress={() => this.props.navigation.navigate(item)}
-        onPress={() => alert(item)}
-        style={styles.textList}
-      >
-        {item}
-      </Text>
+    <ListItem onPress={() => alert(item)} noBorder>
+      <Text style={styles.textList}>{item}</Text>
     </ListItem>
   );
 
-  return (
-    <Container style={styles.container}>
-      <Header style={styles.headers}>
-        <Thumbnail
-          style={styles.avatarThumbnail}
-          source={{
-            uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg'
-          }}
-        />
-        <Text style={styles.textName}>Radi Rusadi</Text>
-        <Text style={styles.textSub}>See profile</Text>
-      </Header>
-      <Content contentContainerStyle={styles.contentContainer}>
-        <DrawerItems {...props} />
-
-        <View style={styles.listFooter}>
+  render() {
+    return (
+      <Container style={styles.container}>
+        <Header style={styles.headers}>
           <Thumbnail
-            square
-            style={styles.logoThumbnail}
-            source={{ uri: 'http://lorempixel.com/640/480' }}
+            style={styles.avatarThumbnail}
+            source={{
+              uri: this.state.profile.avatar
+            }}
+          />
+          <Text style={styles.textName}>
+            {this.state.profile.full_name || this.props.user.username}
+          </Text>
+          <Text
+            onPress={() => NavigationServices.navigate('Profile')}
+            style={styles.textSub}
+          >
+            See profile
+          </Text>
+        </Header>
+        <Content contentContainerStyle={styles.contentContainer}>
+          <FlatList
+            style={styles.flatListFooter}
+            data={this.state.data1}
+            keyExtractor={item => this.keyExtractor(item)}
+            renderItem={item => this.renderItem(item)}
           />
           <FlatList
-            horizontal
             style={styles.flatListFooter}
-            data={data4}
-            keyExtractor={keyExtractor}
-            renderItem={renderItem}
+            data={this.state.data2}
+            keyExtractor={item => this.keyExtractor(item)}
+            renderItem={item => this.renderItem(item)}
           />
-        </View>
-      </Content>
-    </Container>
-  );
-};
+          <FlatList
+            style={styles.flatListFooter}
+            data={this.state.data3}
+            keyExtractor={item => this.keyExtractor(item)}
+            renderItem={item => this.renderItem(item)}
+          />
+
+          <View style={styles.listFooter}>
+            <Thumbnail
+              square
+              style={styles.logoThumbnail}
+              source={{ uri: 'http://lorempixel.com/640/480' }}
+            />
+            <FlatList
+              horizontal
+              style={styles.flatListFooter}
+              data={this.state.data4}
+              keyExtractor={item => this.keyExtractor(item)}
+              renderItem={item => this.renderItem(item)}
+            />
+          </View>
+        </Content>
+      </Container>
+    );
+  }
+}
 
 const styles = {
   container: {
@@ -121,4 +150,11 @@ const styles = {
   }
 };
 
-export default DrawerNavigator;
+const mapStateToProps = ({ user }) => ({
+  user: user.data
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(DrawerNavigator);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { connect } from 'react-redux';
+import { StatusBar, FlatList } from 'react-native';
 import { Button, Icon, View, Text, Container } from 'native-base';
 import { DrawerActions } from 'react-navigation';
 
@@ -41,6 +42,10 @@ class HomeScreen extends Component {
     };
   };
 
+  keyExtractor = item => item.toString();
+
+  renderItem = ({ item }) => <Post onPress={() => alert(item)} />;
+
   handlePress = () => {
     this.props.navigation.navigate('DetailPost');
   };
@@ -48,10 +53,13 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Post onPress={() => this.handlePress()} />
-        <Post onPress={() => this.handlePress()} />
-        <Post onPress={() => this.handlePress()} />
-        <Post onPress={() => this.handlePress()} />
+        {/* <Post onPress={() => this.handlePress()} /> */}
+        {/* <FlatList
+          style={styles.flatListFooter}
+          data={this.state.data1}
+          keyExtractor={item => this.keyExtractor(item)}
+          renderItem={item => this.renderItem(item)}
+        /> */}
       </Container>
     );
   }
@@ -64,4 +72,8 @@ const styles = {
   }
 };
 
-export default HomeScreen;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {};
+
+export default connect()(HomeScreen);

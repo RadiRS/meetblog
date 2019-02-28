@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { _retrieveData } from '../lib/helpers/asynStorage';
 import { StatusBar, ActivityIndicator, ImageBackground } from 'react-native';
+import { authenticatedUser } from '../public/redux/actions/';
 
 StatusBar.setHidden(true);
 
@@ -9,9 +11,7 @@ const imgBackground = require('../assets/img/splashBackground.jpg');
 class SplashScreen extends Component {
   componentDidMount() {
     setTimeout(() => {
-      // const userToken = _retrieveData('userToken');
-      const userToken = false;
-      this.props.navigation.navigate(userToken ? 'Home' : 'AuthMethod');
+      this.props.authenticatedUser();
     }, 2000);
   }
 
@@ -39,4 +39,7 @@ const styles = {
   }
 };
 
-export default SplashScreen;
+export default connect(
+  null,
+  { authenticatedUser }
+)(SplashScreen);

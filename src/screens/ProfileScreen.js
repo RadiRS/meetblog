@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { DrawerActions } from 'react-navigation';
 import { Text, View, Container, Content, Thumbnail } from 'native-base';
 
@@ -39,14 +40,18 @@ class ProfileScreen extends Component {
             <Thumbnail
               style={styles.profileImg}
               source={{
-                uri: 'http://lorempixel.com/640/480/people'
+                uri: this.props.user.profile.avatar
               }}
             />
-            <Text style={styles.profileNameText}>Radi Rusadi</Text>
+            <Text style={styles.profileNameText}>
+              {this.props.user.profile.full_name || this.props.user.username}
+            </Text>
           </View>
           <View style={styles.follContainer}>
             <Text style={styles.follText}>1 Following</Text>
-            <Text style={styles.follText}>1 Follwers</Text>
+            <Text style={styles.follText}>
+              {this.props.user.followers.length} Followers
+            </Text>
           </View>
           <PopUpMenuComponent />
         </Content>
@@ -94,4 +99,11 @@ const styles = {
   }
 };
 
-export default ProfileScreen;
+const mapStateToProps = ({ user }) => ({
+  user: user.data
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(ProfileScreen);

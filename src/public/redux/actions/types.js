@@ -1,5 +1,6 @@
 // Types UsER
 export const GET_USER = 'GET_USER';
+export const AUTHENTICATED_USER = 'AUTHENTICATED_USER';
 export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';

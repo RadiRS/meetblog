@@ -2,6 +2,7 @@ import {
   createStackNavigator,
   createDrawerNavigator,
   createSwitchNavigator,
+  DrawerNavigator as DN,
   createAppContainer
 } from 'react-navigation';
 
