@@ -12,6 +12,7 @@ import {
   Thumbnail,
   View
 } from 'native-base';
+import { authenticatedUser } from '../../public/redux/actions/userActions';
 import NavigationServices from '../../services/navigation';
 
 class DrawerNavigator extends Component {
@@ -27,6 +28,10 @@ class DrawerNavigator extends Component {
     if (nextProps.user.profile) {
       this.setState({ profile: nextProps.user.profile });
     }
+  }
+
+  componentDidMount() {
+    this.props.authenticatedUser();
   }
 
   keyExtractor = item => item.toString();
@@ -156,5 +161,5 @@ const mapStateToProps = ({ user }) => ({
 
 export default connect(
   mapStateToProps,
-  null
+  { authenticatedUser }
 )(DrawerNavigator);

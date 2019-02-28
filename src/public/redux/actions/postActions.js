@@ -25,22 +25,28 @@ export const getPosts = () => async dispatch => {
 };
 
 export const getPost = data => async dispatch => {
-  const userToken = await _retrieveData('token');
-  axios
-    .get(`${REST_API}/post/${data.id}`, {
-      headers: { Authorization: `Bearer ${userToken}` }
-    })
-    .then(res => {
-      dispatch({
-        type: GET_POST,
-        payload: res.data[0]
-      });
-      NavigationService.navigate('DetailPost');
-    })
-    .catch(err => {
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      });
-    });
+  dispatch({
+    type: GET_POST,
+    payload: data
+  });
+  NavigationService.navigate('DetailPost');
 };
+
+// const userToken = await _retrieveData('token');
+// axios
+//   .get(`${REST_API}/post/${data.id}`, {
+//     headers: { Authorization: `Bearer ${userToken}` }
+//   })
+//   .then(res => {
+//     dispatch({
+//       type: GET_POST,
+//       payload: res.data[0]
+//     });
+//     NavigationService.navigate('DetailPost');
+//   })
+//   .catch(err => {
+//     dispatch({
+//       type: GET_ERRORS,
+//       payload: err.response.data
+//     });
+//   });

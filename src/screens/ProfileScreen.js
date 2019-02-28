@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { DrawerActions } from 'react-navigation';
 import { Text, View, Container, Content, Thumbnail } from 'native-base';
-
+// Actions
+import { logoutUser } from '../public/redux/actions';
 // Components
 import ButtonIconComponent from '../components/common/buttons/IconButton';
 import PopUpMenuComponent from '../components/profile/PopUpMenu';
@@ -48,12 +49,15 @@ class ProfileScreen extends Component {
             </Text>
           </View>
           <View style={styles.follContainer}>
-            <Text style={styles.follText}>1 Following</Text>
+            <Text style={styles.follText}>
+              {this.props.user.following.length} Following
+            </Text>
             <Text style={styles.follText}>
               {this.props.user.followers.length} Followers
             </Text>
           </View>
           <PopUpMenuComponent />
+          <Text onPress={() => this.props.logoutUser()}>Logout</Text>
         </Content>
       </Container>
     );
@@ -105,5 +109,5 @@ const mapStateToProps = ({ user }) => ({
 
 export default connect(
   mapStateToProps,
-  null
+  { logoutUser }
 )(ProfileScreen);

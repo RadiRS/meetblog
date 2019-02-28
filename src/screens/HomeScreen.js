@@ -59,7 +59,6 @@ class HomeScreen extends Component {
   );
 
   handlePressPost = item => {
-    // this.props.navigation.navigate('DetailPost');
     this.props.getPost(item);
   };
 

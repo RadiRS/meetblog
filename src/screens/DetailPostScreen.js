@@ -5,7 +5,7 @@ import { Container, Content, Thumbnail, Text, View, Icon } from 'native-base';
 class DetailPostScreen extends Component {
   render() {
     const { title, img_Content, slug, content, created_at } = this.props.post;
-    const { username } = this.props.post.users;
+    const { username } = this.props.post.user;
 
     return (
       <Container>

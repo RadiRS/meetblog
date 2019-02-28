@@ -20,7 +20,7 @@ class Post extends Component {
             />
           ) : null}
         </View>
-        <Text style={styles.author}>{data.users.username}</Text>
+        <Text style={styles.author}>{data.user.username}</Text>
         <View style={styles.containerFooterPost}>
           <Text style={styles.textFooterPost}>{data.created_at}</Text>
           <Text style={styles.textFooterPost}>6 min read</Text>

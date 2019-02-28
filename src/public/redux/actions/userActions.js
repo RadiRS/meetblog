@@ -1,7 +1,11 @@
 import axios from 'axios';
 import NavigationService from '../../../services/navigation';
 import { REST_API } from '../../../services/api';
-import { _storeData, _retrieveData } from '../../../lib/helpers/asynStorage';
+import {
+  _storeData,
+  _retrieveData,
+  _removeData
+} from '../../../lib/helpers/asynStorage';
 import {
   REGISTER_USER,
   GET_ERRORS,
@@ -64,4 +68,9 @@ export const loginUser = data => dispatch => {
         payload: err.response.data
       });
     });
+};
+
+export const logoutUser = () => async dispatch => {
+  await _removeData('token');
+  NavigationService.navigate('Signin');
 };
