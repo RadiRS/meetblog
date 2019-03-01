@@ -14,6 +14,8 @@ import {
   Signup,
   Home,
   Profile,
+  UserProfile,
+  UpdateProfile,
   UserPost,
   DetailPost,
   CreatePost,
@@ -32,7 +34,9 @@ const AppHomeStackNavigator = createStackNavigator({
 
 // Profile Stack Navigator
 const AppProfileStackNavigator = createStackNavigator({
-  Profile
+  Profile,
+  UserProfile,
+  UpdateProfile
 });
 
 // App Drawer Navigator

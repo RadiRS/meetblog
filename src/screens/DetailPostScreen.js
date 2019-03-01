@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Content, Thumbnail, Text, View, Icon } from 'native-base';
+import { getUserProfile } from '../public/redux/actions/profileActions';
 
 class DetailPostScreen extends Component {
   render() {
     const { title, img_Content, slug, content, created_at } = this.props.post;
-    const { username } = this.props.post.user;
+    const { username, id } = this.props.post.user;
+    const { getUserProfile, user } = this.props;
 
     return (
       <Container>
@@ -22,7 +24,12 @@ class DetailPostScreen extends Component {
                 />
               ) : null}
 
-              <Text style={styles.authorText}>{username}</Text>
+              <Text
+                onPress={user.id === id ? null : () => getUserProfile(id)}
+                style={styles.authorText}
+              >
+                {username}
+              </Text>
               <Text style={styles.datePost}>{created_at} - 11 min read</Text>
             </View>
           </View>
@@ -79,11 +86,16 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ post }) => ({
-  post: post.result
+const mapStateToProps = ({ post, user }) => ({
+  post: post.result,
+  user: user.data
 });
+
+const mapDispatchToProps = {
+  getUserProfile
+};
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(DetailPostScreen);

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FlatList } from 'react-native';
 import { Text, View, Container, Content, Thumbnail } from 'native-base';
 // Actions
-import { logoutUser } from '../public/redux/actions';
+import { followingUser } from '../public/redux/actions';
 // Components
 import ButtonIconComponent from '../components/common/buttons/IconButton';
+import ButtonComponent from '../components/common/buttons/Button';
+import Post from '../components/post/Post';
 import PopUpMenuComponent from '../components/profile/PopUpMenu';
 
-class ProfileScreen extends Component {
+class UserProfileScreen extends Component {
   static navigationOptions = ({ navigation }) => {
-    const handleLogout = navigation.getParam('handleLogout');
+    // const handleLogout = navigation.getParam('handleLogout');
     return {
       headerTransparent: true,
       headerTintColor: '#079D75',
@@ -19,18 +22,32 @@ class ProfileScreen extends Component {
           transparent={true}
           iconName="arrow-left"
         />
-      ),
-      headerRight: <PopUpMenuComponent handleLogout={handleLogout} />
+      )
+      // headerRight: <PopUpMenuComponent handleLogout={handleLogout} />
     };
   };
 
-  componentDidMount() {
-    this.props.navigation.setParams({
-      handleLogout: this.props.logoutUser
-    });
-  }
+  // componentDidMount() {
+  //   this.props.navigation.setParams({
+  //     handleLogout: this.props.logoutUser
+  //   });
+  // }
+
+  // keyExtractor = item => item.toString();
+
+  // renderItem = ({ item }) => (
+  //   <Post
+  //     data={item}
+  //     onPress={() => this.handlePressPost(item)}
+  //     handleDelete={() => this.handleDeletePost(item)}
+  //     handleUpdate={() => this.handleUpdatePost(item)}
+  //   />
+  // );
 
   render() {
+    let { data } = this.props.navigation.state.params;
+    const { user, followingUser } = this.props;
+
     return (
       <Container style={styles.container}>
         <Content contentContainerStyle={styles.contentContainer}>
@@ -38,21 +55,38 @@ class ProfileScreen extends Component {
             <Thumbnail
               style={styles.profileImg}
               source={{
-                uri: this.props.user.profile.avatar
+                uri: data.profile.avatar
               }}
             />
-            <Text style={styles.profileNameText}>
-              {this.props.user.profile.full_name || this.props.user.username}
-            </Text>
+            <Text style={styles.profileNameText}>{data.profile.full_name}</Text>
           </View>
           <View style={styles.follContainer}>
             <Text style={styles.follText}>
-              {this.props.user.following.length} Following
+              {data.following.length} Following
             </Text>
-            <Text style={styles.follText}>
-              {this.props.user.followers.length} Followers
-            </Text>
+            <Text style={styles.follText}>{data.follower.length} Follower</Text>
           </View>
+          <ButtonComponent
+            onPress={() => followingUser(user.id, data.profile.user_id)}
+            block
+            label={
+              data.follower.find(u => u.user_id === user.id)
+                ? 'Unfollow'
+                : 'Follow'
+            }
+          />
+          {/* let productInStateOrders = state.orders.find(
+        m => m.id === action.payload.data.id
+      ); */}
+          {/* <View>
+            <FlatList
+              data={data.posts}
+              keyExtractor={this.keyExtractor}
+              renderItem={this.renderItem}
+              refreshing={isLoading}
+              onRefresh={() => this.handleRefresh()}
+            />
+          </View> */}
         </Content>
       </Container>
     );
@@ -104,5 +138,5 @@ const mapStateToProps = ({ user }) => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
-)(ProfileScreen);
+  { followingUser }
+)(UserProfileScreen);
