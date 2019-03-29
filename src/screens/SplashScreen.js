@@ -11,7 +11,8 @@ const imgBackground = require('../assets/img/splashBackground.jpg');
 class SplashScreen extends Component {
   componentDidMount() {
     setTimeout(() => {
-      this.props.authenticatedUser();
+      // this.props.authenticatedUser();
+      this.props.navigation.navigate('Home');
     }, 2000);
   }
 
